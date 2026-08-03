@@ -130,7 +130,13 @@ Terminal 6 — Teleoperation Control
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp && export ROS_STATIC_PEERS=100.81.31.60
 ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -p angular_speed:=2.0
 ```
+## 🎥 Mapping Process
 
+Here is a real-time demonstration of the SLAM mapping process using `slam_toolbox`:
+
+<p align="center">
+  <img width="800" height="450" alt="SLAM Mapping Demo" src="https://github.com/user-attachments/assets/d431598b-b492-43a6-bd56-da642398cc15" />
+</p>
 
 
 
