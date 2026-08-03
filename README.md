@@ -144,16 +144,16 @@ Once a map is generated or loaded, the vehicle initiates autonomous parking usin
 
 ```mermaid
 flowchart TD
-    %% Define Styles
+    %% Define Styles with dynamic padding
     classDef stateStyle fill:#1f2937,stroke:#3b82f6,stroke-width:2px,color:#fff;
     classDef successStyle fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff;
     classDef rejectStyle fill:#7f1d1d,stroke:#ef4444,stroke-width:2px,color:#fff;
 
-    State1["1. ARUCO HUNTING<br/><i>(Rotates 360° to locate target marker)</i>"]:::stateStyle
-    State2["2. ALIGNMENT & APPROACH<br/><i>(Centers target in camera frame & approaches)</i>"]:::stateStyle
-    State3["3. SPACE VALIDATION<br/><i>(HSV thresholding checks red boundary lines)</i>"]:::stateStyle
-    State4["4. EXECUTE PARK<br/><i>(Performs final maneuver)</i>"]:::successStyle
-    State5["5. REJECT & HUNT<br/><i>(Searches for next available bay)</i>"]:::rejectStyle
+    State1["<b>1. ARUCO HUNTING</b><br/><i>(Rotates 360° to locate<br/>target marker)</i>"]:::stateStyle
+    State2["<b>2. ALIGNMENT & APPROACH</b><br/><i>(Centers target in camera<br/>frame & approaches)</i>"]:::stateStyle
+    State3["<b>3. SPACE VALIDATION</b><br/><i>(HSV thresholding checks<br/>red boundary lines)</i>"]:::stateStyle
+    State4["<b>4. EXECUTE PARK</b><br/><i>(Performs final maneuver)</i>"]:::successStyle
+    State5["<b>5. REJECT & HUNT</b><br/><i>(Searches for next<br/>available bay)</i>"]:::rejectStyle
 
     State1 -->|Marker Detected /aruco_pose| State2
     State2 -->|Target Distance Reached| State3
