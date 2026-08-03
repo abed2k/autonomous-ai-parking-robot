@@ -27,8 +27,8 @@ This project presents a dual-tier distributed computing architecture for an auto
 | | 5V / 5A DC-DC Buck Converters | Voltage regulation for single-board computers and sensor logic |
 
 ### Software & Networking
-* **OS / Framework**: Linux (Ubuntu), ROS 2 (Jazzy / Humble), OpenCV[cite: 1]
-* **Networking**: Headless operation via peer-to-peer Tailscale VPN using Cyclone DDS middleware over SSH[cite: 1]
+* **OS / Framework**: Linux (Ubuntu), ROS 2 (Jazzy / Humble), OpenCV
+* **Networking**: Headless operation via peer-to-peer Tailscale VPN using Cyclone DDS middleware over SSH
 
 ---
 ## 🔄 System Architecture & Data Flow
