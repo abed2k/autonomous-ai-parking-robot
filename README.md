@@ -137,8 +137,11 @@ Here is a real-time demonstration of the SLAM mapping process using `slam_toolbo
 <p align="center">
   <img width="800" height="450" alt="SLAM Mapping Demo" src="https://github.com/user-attachments/assets/d431598b-b492-43a6-bd56-da642398cc15" />
 </p>
+
 ---
 ## 🅿️ Autonomous Parking Sequence (ArUco & Camera)
+Once a map is generated or loaded, the vehicle initiates autonomous parking using visual feedback from the onboard USB camera. The system uses ArUco marker detection and HSV color thresholding to locate target bays, assess boundary constraints, and execute dynamic parking maneuvers.
+
 
 
 
