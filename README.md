@@ -26,9 +26,16 @@ This project presents a dual-tier distributed computing architecture for an auto
 | **Power System** | 16.8V Li-Ion Battery Pack | 4S Sony 18650 cell configuration managed by an onboard BMS |
 | | 5V / 5A DC-DC Buck Converters | Voltage regulation for single-board computers and sensor logic |
 
-### Software & Networking
-* **OS / Framework**: Linux (Ubuntu), ROS 2 (Jazzy / Humble), OpenCV
-* **Networking**: Headless operation via peer-to-peer Tailscale VPN using Cyclone DDS middleware over SSH
+### 💻 Software & Networking
+
+| Layer | Technology | Purpose / Description |
+| :--- | :--- | :--- |
+| **Operating System** | Linux (Ubuntu) | Core operating system running on the Raspberry Pi 5 |
+| **Robotics Framework** | ROS 2 (Jazzy / Humble) | Distributed middleware ecosystem managing modular nodes and topics |
+| **Computer Vision** | OpenCV (Python) | Real-time image processing for ArUco tag detection and HSV line masking |
+| **Networking & VPN** | Tailscale VPN | Encrypted peer-to-peer mesh network for wireless headless operation |
+| **DDS Middleware** | Cyclone DDS | High-bandwidth, low-latency ROS 2 communications layer over Tailscale |
+| **Remote Access** | SSH | Headless terminal access for wireless code execution and monitoring |
 
 ---
 ## 🔄 System Architecture & Data Flow
