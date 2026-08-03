@@ -58,3 +58,17 @@ pico_reader/
 ├── package.xml                  # ROS 2 package manifest
 ├── setup.cfg                    # Package installation config
 └── setup.py                     # Python package installer setup
+```
+
+---
+## 🚀 Usage & Deployment
+
+To run the complete system on the robot (including hardware nodes, LiDAR, TF, SLAM, and Nav2), follow the commands below.
+
+### 🌐 Environment Setup
+Before running any ROS 2 node across network interfaces via Tailscale DDS, ensure the Cyclone DDS middleware environment variables are declared:
+
+```bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export ROS_STATIC_PEERS=100.81.31.60
+---
