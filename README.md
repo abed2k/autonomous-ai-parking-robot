@@ -31,8 +31,13 @@ This project presents a dual-tier distributed computing architecture for an auto
 * **Networking**: Headless operation via peer-to-peer Tailscale VPN using Cyclone DDS middleware over SSH[cite: 1]
 
 ---
+## 🔄 System Architecture & Data Flow
 
+The system operates using a distributed ROS 2 node pipeline. Sensor streams from the hardware hardware nodes pass through perception and localization layers before reaching the Nav2 stack and base motor controller.
 
+![System Data Flow Architecture](data_flow.png)
+
+---
 
 ## 📂 Repository Structure
 
