@@ -32,21 +32,7 @@ This project presents a dual-tier distributed computing architecture for an auto
 
 ---
 
-## ⚙️ Methodology & Algorithmic Pipeline
 
-### 1. Sensor Fusion Odometry
-To counteract mechanical wheel slip during turns, the navigation stack decouples linear and angular motion tracking[cite: 1]:
-* **Linear Distance**: Calculated via wheel encoder tick integration[cite: 1].
-* **Angular Orientation**: Tracked using the integrated MPU6050 IMU gyroscope[cite: 1].
-
-### 2. Finite State Machine (FSM) Logic
-The autonomous decision pipeline executes across four main states[cite: 1]:
-1. **ArUco Tag Hunting**: Rotates $360^\circ$ to locate target ArUco markers[cite: 1].
-2. **Alignment & Approach**: Aligns the vehicle heading with the target bay[cite: 1].
-3. **Boundary Measurement**: Uses HSV color masking to detect red line parking constraints[cite: 1].
-4. **Autonomous Parking / Rejection**: Evaluates space clearance to either perform the parking maneuver or reject the spot[cite: 1].
-
----
 
 ## 📂 Repository Structure
 
