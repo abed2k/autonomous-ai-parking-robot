@@ -4,6 +4,27 @@ An autonomous mobile robot designed to navigate indoor environments, detect desi
 
 ---
 
+## 📋 Table of Contents
+
+- [📌 Project Overview](#-project-overview)
+- [🛠️ System Architecture](#️-system-architecture)
+  - [Hardware Components](#-hardware-components)
+  - [Software & Networking](#-software--networking)
+- [🔄 System Architecture & Data Flow](#-system-architecture--data-flow)
+- [📂 Repository Structure](#-repository-structure)
+- [🚀 Usage & Deployment](#-usage--deployment)
+  - [🌐 Environment Setup](#-environment-setup)
+  - [⏱️ System Time Synchronization](#️-system-time-synchronization)
+  - [🕹️ Hardware & Sensing Nodes](#️-hardware--sensing-nodes)
+- [🎥 Mapping Process](#-mapping-process)
+- [🅿️ Autonomous Parking Sequence (ArUco & Camera)](#️-autonomous-parking-sequence-aruco--camera)
+  - [🔄 Autonomous Parking FSM Workflow](#-autonomous-parking-fsm-workflow)
+  - [🚀 Terminal Execution](#-terminal-execution)
+
+
+
+---
+
 ## 📌 Project Overview
 
 This project presents a dual-tier distributed computing architecture for an autonomous parking robot. High-level computer vision and state management are processed on a **Raspberry Pi 5** via ROS 2, while real-time low-level motor actuation and encoder tracking are offloaded to a **Raspberry Pi Pico 2**. Sensor fusion between an IMU gyroscope and optical wheel encoders eliminates rotational drift to achieve precise alignment and parking.
