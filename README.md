@@ -98,6 +98,7 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp && export ROS_STATIC_PEERS=100.81.3
 ros2 launch rplidar_ros rplidar.launch.py
 ```
 Terminal 4 — Mapping vs. Localization (Choose One)
+
 Option A: Build a New Map (SLAM Mapping)
 
 ```bash
