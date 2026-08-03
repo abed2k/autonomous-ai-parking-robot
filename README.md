@@ -162,7 +162,12 @@ flowchart TD
     State5 -.->|Resume Search| State1
 ```
 
+---
 
+### 🚀 Terminal Execution Steps
+```bash
+python3 ~/aruco_parking.py
+```
 
 
 
