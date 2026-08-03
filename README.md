@@ -164,7 +164,7 @@ flowchart TD
 
 ---
 
-### 🚀 Terminal Execution Steps
+### 🚀 Terminal Execution 
 ```bash
 python3 ~/aruco_parking.py
 ```
