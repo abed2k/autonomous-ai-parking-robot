@@ -168,10 +168,6 @@ flowchart TD
 ```bash
 python3 ~/aruco_parking.py
 ```
----
-
-### Parking Process 
-
 <p align="center">
   <img width="800" height="450" alt="Autonomous Parking Demonstration" src="assets/parking.gif" />
 </p>
