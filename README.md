@@ -5,7 +5,7 @@
 ![C++](https://img.shields.io/badge/C%2B%2B-17-00599C)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-An autonomous mobile robot designed to navigate indoor environments, detect designated parking bays using computer vision, evaluate parking constraints in real time, and execute precise self-parking routines without human intervention. Developed for **MECE401 - Mechatronics Design** at **Atilim University**.
+An autonomous mobile robot designed to navigate indoor environments, detect designated parking bays using computer vision, evaluate parking constraints in real time, and execute precise self-parking routines without human intervention. 
 
 ---
 
