@@ -169,5 +169,5 @@ flowchart TD
 python3 ~/aruco_parking.py
 ```
 <p align="center">
-  <img width="800" height="450" alt="Autonomous Parking Demonstration" src="assets/parking.gif" />
+  <img width="800" height="450" alt="Autonomous Parking Demonstration" src="parking.gif" />
 </p>
