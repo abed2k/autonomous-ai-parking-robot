@@ -79,11 +79,11 @@ Before running any ROS 2 node across network interfaces via Tailscale DDS, ensur
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export ROS_STATIC_PEERS=100.81.31.60
 ```
-### ⏱️ Step 0: System Time Synchronization
+### ⏱️  System Time Synchronization
 ```bash
 sudo /usr/local/bin/sync-time.sh
 ```
-### 🕹️ Step 1: Hardware & Sensing Nodes
+### 🕹️  Hardware & Sensing Nodes
 Open separate terminals for each subsystem:
 
 Terminal 1 — Base Driver (pico_node)
