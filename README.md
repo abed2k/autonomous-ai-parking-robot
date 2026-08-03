@@ -142,26 +142,25 @@ Here is a real-time demonstration of the SLAM mapping process using `slam_toolbo
 ## 🅿️ Autonomous Parking Sequence (ArUco & Camera)
 Once a map is generated or loaded, the vehicle initiates autonomous parking using visual feedback from the onboard USB camera. The system uses ArUco marker detection and HSV color thresholding to locate target bays, assess boundary constraints, and execute dynamic parking maneuvers.
 
-+-----------------------+
-       |   1. ARUCO HUNTING    | <--- Rotates 360° to locate target marker
-       +-----------+-----------+
-                   | Marker Detected (/aruco_pose)
-                   v
-       +-----------+-----------+
-       | 2. ALIGNMENT & APPROACH | <--- Centers target in camera frame & approaches
-       +-----------+-----------+
-                   | Target Distance Reached
-                   v
-       +-----------+-----------+
-       | 3. SPACE VALIDATION   | <--- HSV thresholding checks red boundary lines
-       +-----+-----------+-----+
-             |           |
-Valid Space  |           | Obstacle Detected / Insufficient Clearance
-             v           v
-+------------------+   +--------------------+
-| 4. EXECUTE PARK  |   | 5. REJECT & HUNT   | ---> Searches for next available bay
-+------------------+   +--------------------+
+```mermaid
+flowchart TD
+    %% Define Styles
+    classDef stateStyle fill:#1f2937,stroke:#3b82f6,stroke-width:2px,color:#fff;
+    classDef successStyle fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff;
+    classDef rejectStyle fill:#7f1d1d,stroke:#ef4444,stroke-width:2px,color:#fff;
 
+    State1["1. ARUCO HUNTING<br/><i>(Rotates 360° to locate target marker)</i>"]:::stateStyle
+    State2["2. ALIGNMENT & APPROACH<br/><i>(Centers target in camera frame & approaches)</i>"]:::stateStyle
+    State3["3. SPACE VALIDATION<br/><i>(HSV thresholding checks red boundary lines)</i>"]:::stateStyle
+    State4["4. EXECUTE PARK<br/><i>(Performs final maneuver)</i>"]:::successStyle
+    State5["5. REJECT & HUNT<br/><i>(Searches for next available bay)</i>"]:::rejectStyle
+
+    State1 -->|Marker Detected /aruco_pose| State2
+    State2 -->|Target Distance Reached| State3
+    State3 -->|Valid Space| State4
+    State3 -->|Obstacle / Insufficient Clearance| State5
+    State5 -.->|Resume Search| State1
+```
 
 
 
