@@ -12,15 +12,19 @@ This project presents a dual-tier distributed computing architecture for an auto
 
 ## 🛠️ System Architecture
 
-### Hardware Components
-* **High-Level Processing Unit**: Raspberry Pi 5
-* **Microcontroller**: Raspberry Pi Pico 2
-* **Sensors**: 
-  * 10 DOF Waveshare IMU (MPU6050)[cite: 1]
-  * Onboard USB Camera[cite: 1]
-  * Optical Wheel Encoders[cite: 1]
-* **Actuation**: 4× DC Motors driven by 4× IBT-2 H-Bridge Motor Drivers[cite: 1]
-* **Power Supply**: 16.8V Lithium-Ion Battery Pack (4s Sony 18650 cells with BMS) + 5V/5A DC-DC Buck Converters[cite: 1]
+### 🛠️ Hardware Components
+
+| Subsystem | Component | Description / Role |
+| :--- | :--- | :--- |
+| **High-Level Processing** | Raspberry Pi 5 | Runs ROS 2 (Jazzy/Humble), computer vision pipelines, and FSM logic |
+| **Microcontroller** | Raspberry Pi Pico 2 | Low-level real-time motor control and optical encoder tracking |
+| **Sensors** | 10 DOF Waveshare IMU (MPU6050) | Gyroscope turning angle measurement to eliminate rotational drift |
+| | Onboard USB Camera | Visual input for ArUco tag detection and HSV line color masking |
+| | Optical Wheel Encoders | Quadrature tick integration for linear distance measurement |
+| **Actuation** | 4× DC Motors | Primary drive system for omnidirectional/differential movement |
+| | 4× IBT-2 Motor Drivers | H-Bridge drivers for high-current PWM motor control |
+| **Power System** | 16.8V Li-Ion Battery Pack | 4S Sony 18650 cell configuration managed by an onboard BMS |
+| | 5V / 5A DC-DC Buck Converters | Voltage regulation for single-board computers and sensor logic |
 
 ### Software & Networking
 * **OS / Framework**: Linux (Ubuntu), ROS 2 (Jazzy / Humble), OpenCV[cite: 1]
