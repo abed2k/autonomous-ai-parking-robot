@@ -150,7 +150,7 @@ flowchart TD
     classDef rejectStyle fill:#7f1d1d,stroke:#ef4444,stroke-width:2px,color:#fff;
 
     State1["<b>1. ARUCO HUNTING</b><br/><i>(Rotates 360° to locate<br/>target marker)</i>"]:::stateStyle
-    State2["<b>2. ALIGNMENT & APPROACH </b><br/><i>(Centers target in camera<br/>frame & approaches)</i>"]:::stateStyle
+    State2["<b>2. ALIGNMENT  </b><br/><i>(Centers target in camera<br/>frame & approaches)</i>"]:::stateStyle
     State3["<b>3. SPACE VALIDATION</b><br/><i>(HSV thresholding checks<br/>red boundary lines)</i>"]:::stateStyle
     State4["<b>4. EXECUTE PARK</b><br/><i>(Performs final maneuver)</i>"]:::successStyle
     State5["<b>5. REJECT & HUNT</b><br/><i>(Searches for next<br/>available bay)</i>"]:::rejectStyle
