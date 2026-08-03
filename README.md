@@ -192,3 +192,9 @@ python3 ~/aruco_parking.py
 <p align="center">
   <img width="800" height="450" alt="Autonomous Parking Demonstration" src="parking.gif" />
 </p>
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
