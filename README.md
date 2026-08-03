@@ -72,8 +72,61 @@ Before running any ROS 2 node across network interfaces via Tailscale DDS, ensur
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export ROS_STATIC_PEERS=100.81.31.60
 ```
-##⏱️ Step 0: System Time Synchronization
+### ⏱️ Step 0: System Time Synchronization
 ```bash
 sudo /usr/local/bin/sync-time.sh
 ```
-##🕹️ Step 1: Hardware & Sensing Nodes
+### 🕹️ Step 1: Hardware & Sensing Nodes
+Open separate terminals for each subsystem:
+
+Terminal 1 — Base Driver (pico_node)
+```bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp && export ROS_STATIC_PEERS=100.81.31.60
+cd ~/robot_ws && source install/setup.bash
+ros2 run pico_reader pico_node
+```
+Terminal 2 — Static Transform (tf2_ros)
+
+```bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp && export ROS_STATIC_PEERS=100.81.31.60
+ros2 run tf2_ros static_transform_publisher 0.18 0 0.58 0 0 0 base_link laser
+```
+
+Terminal 3 — LiDAR Sensor Driver (rplidar_ros)
+```bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp && export ROS_STATIC_PEERS=100.81.31.60
+ros2 launch rplidar_ros rplidar.launch.py
+```
+Terminal 4 — Mapping vs. Localization (Choose One)
+Option A: Build a New Map (SLAM Mapping)
+
+```bash
+sed -i 's/mode: localization/mode: mapping/' ~/robot_ws/src/pico_reader/config/slam_toolbox.yaml
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp && export ROS_STATIC_PEERS=100.81.31.60
+ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/naser/robot_ws/src/pico_reader/config/slam_toolbox.yaml
+```
+Option B: Localize on an Existing Map
+```bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp && export ROS_STATIC_PEERS=100.81.31.60
+ros2 launch slam_toolbox localization_launch.py slam_params_file:=/home/naser/robot_ws/src/pico_reader/config/slam_toolbox.yaml
+```
+Terminal 5 — Navigation Stack (nav2)
+
+```bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp && export ROS_STATIC_PEERS=100.81.31.60
+cd ~/robot_ws && source install/setup.bash
+ros2 launch pico_reader nav2_launch.py
+```
+Terminal 6 — Teleoperation Control
+```bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp && export ROS_STATIC_PEERS=100.81.31.60
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -p angular_speed:=2.0
+```
+
+
+
+
+
+
+
+
