@@ -104,12 +104,12 @@ Option A: Build a New Map (SLAM Mapping)
 ```bash
 sed -i 's/mode: localization/mode: mapping/' ~/robot_ws/src/pico_reader/config/slam_toolbox.yaml
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp && export ROS_STATIC_PEERS=100.81.31.60
-ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/naser/robot_ws/src/pico_reader/config/slam_toolbox.yaml
+ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/robot_ws/src/pico_reader/config/slam_toolbox.yaml
 ```
 Option B: Localize on an Existing Map
 ```bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp && export ROS_STATIC_PEERS=100.81.31.60
-ros2 launch slam_toolbox localization_launch.py slam_params_file:=/home/naser/robot_ws/src/pico_reader/config/slam_toolbox.yaml
+ros2 launch slam_toolbox localization_launch.py slam_params_file:=/robot_ws/src/pico_reader/config/slam_toolbox.yaml
 ```
 Terminal 5 — Navigation Stack (nav2)
 
