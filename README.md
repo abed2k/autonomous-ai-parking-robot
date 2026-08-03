@@ -37,12 +37,19 @@ This project presents a dual-tier distributed computing architecture for an auto
 ## 📂 Repository Structure
 
 ```text
-├── config/              # ROS 2 parameter files & HSV color thresholds
-├── launch/              # ROS 2 launch files
-├── nodes/               # ROS 2 Python / C++ nodes
-│   ├── vision_node.py   # OpenCV ArUco & HSV masking pipeline
-│   ├── fsm_node.py      # Main Finite State Machine controller
-│   └── imu_fusion.py    # Sensor fusion odometry node
-├── pico_firmware/       # Raspberry Pi Pico 2 C++/MicroPython motor controller
-├── docs/                # Project documentation & report
-└── README.md
+pico_reader/
+├── config/
+│   ├── nav2_params.yaml         # Nav2 costmaps & planner parameters
+│   └── slam_toolbox.yaml        # SLAM Toolbox parameters (Mapping & Localization)
+├── launch/                      # Launch files directory
+├── pico_reader/                 # Main Python package module
+│   ├── __init__.py              # Python module initialization
+│   ├── cmd_node.py              # Command / velocity processing node
+│   ├── nav2_launch.py           # Nav2 stack launch script
+│   ├── pico_node.py             # Pico microcontroller interface & odometry node
+│   └── robot_launch.py          # Primary robot bringup launch script
+├── resource/
+│   └── pico_reader              # ROS 2 package index marker
+├── package.xml                  # ROS 2 package manifest
+├── setup.cfg                    # Package installation config
+└── setup.py                     # Python package installer setup
